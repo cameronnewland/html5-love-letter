@@ -14,6 +14,7 @@ html {
     color: #222;
     font-size: 1em;
     line-height: 1.4;
+    font-family: 'Crimson Text', serif;
 }
 
 /*
@@ -187,14 +188,67 @@ textarea {
     clear: both;
 }
 
+@keyframes pulse { /* flame pulses */
+  0%   { opacity:1; }
+  50%  { opacity:0.3; }
+  100% { opacity:1; }
+}
+
+@-webkit-keyframes pulse { /* flame pulses */
+  0%   { opacity:1; }
+  50%  { opacity:0.3; }
+  100% { opacity:1; }
+}
+
+body {
+    background:transparent;
+    transition:2s;
+}
+
+body.photo {
+    background:url(/img/tea.jpg) no-repeat center center;
+    background-size:cover;
+    transition:2s;
+}
+
+body p {
+    font-size:1.4rem;
+    opacity:0;
+    color:#585858;
+}
+
+span {
+    display:inline-block;
+    text-align:right;
+    margin-top:3.5%;
+    margin-right:-10%;
+    opacity:0;
+    color:#c92525;
+}
+
+span.pulse {  
+    animation: pulse 2s infinite alternate;
+    -webkit-animation: pulse 2s infinite;
+}
+
+.vertically-centered-container {
+    margin:0 auto;
+    text-align:center;
+    margin-top:10%;
+    font-size:3rem;
+}
+
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
+@media only screen and (min-width: 1024px) {
     /* Style adjustments for viewports that meet the condition */
+    body p {
+    font-size:2rem;
+    }
 }
 
 @media print,
